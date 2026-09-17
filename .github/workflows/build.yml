@@ -8,7 +8,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.0'
-      - run: - run: flutter create --platforms=android --project-name opf_late_register . .
+      - run: flutter create --platforms=android --project-name opf_late_register .
       - run: sed -i 's#<manifest xmlns:android="http://schemas.android.com/apk/res/android">#<manifest xmlns:android="http://schemas.android.com/apk/res/android"><uses-permission android:name="android.permission.CAMERA"/>#' android/app/src/main/AndroidManifest.xml
       - run: flutter pub get
       - run: flutter build apk --release
